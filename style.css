@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
 
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 #app {
@@ -15,12 +15,16 @@
   margin: auto;
   padding: 50px 10px;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 
   background-color: navy;
+
+  overflow: hidden;
 }
 
 header,
@@ -39,6 +43,8 @@ header {
 }
 
 .puzzle-board {
+  position: relative;
+
   width: 90%;
   margin: 0 auto;
 
@@ -84,6 +90,7 @@ header {
 }
 
 .puzzle-container-slot {
+  position: relative;
   width: 100px;
 
   border: none;
@@ -96,7 +103,21 @@ header {
 }
 
 .puzzle-piece {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
   cursor: move;
   width: 100px;
   height: 100px;
+}
+
+.puzzle-board .puzzle-piece {
+  position: relative;
+  top: 0;
+  bottom: 0;
+}
+
+.dragged {
+  opacity: 0.5;
 }

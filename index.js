@@ -1,3 +1,5 @@
+import "./touch.js";
+
 const pieces = document.querySelectorAll(".puzzle-piece");
 const pieceContainer = document.querySelector(".puzzle-piece-container");
 const board = document.querySelector(".puzzle-board");
