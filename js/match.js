@@ -1,7 +1,14 @@
 const date = document.querySelector(".date");
 
-const ANSWER_PUZZLE_STRING = "123450000";
-const ANSWER_DATE = "1294년 10월 1일";
+const { stage } = document.querySelector(".title")?.dataset;
+
+const PUZZLE_ANSWER = ["123450000", "123450000", "123450000", "123450000"];
+const RESULT_DATE = [
+  "1294년 10월 1일",
+  "1866년 8월 14일",
+  "1919년 2월 20일",
+  "1866년 10월 1일",
+];
 
 const getCurrentBoardStatus = (slotArray) =>
   slotArray
@@ -10,11 +17,11 @@ const getCurrentBoardStatus = (slotArray) =>
     .join("");
 
 const checkAnswer = (slotArray) =>
-  getCurrentBoardStatus(slotArray) === ANSWER_PUZZLE_STRING;
+  getCurrentBoardStatus(slotArray) === PUZZLE_ANSWER[stage];
 
 export const handleAnswer = (slotArray) => {
   if (checkAnswer(slotArray)) {
-    date.textContent = ANSWER_DATE;
+    date.textContent = RESULT_DATE[stage];
 
     const submitButton = document.querySelector("#submit-button");
     submitButton.disabled = false;
