@@ -26,7 +26,7 @@ window.RealWorld = {
 const submitButton = document.querySelector("#submit-button");
 const closeButton = document.querySelector("#close-button");
 
-closeButton.addEventListener("click", () => {
+submitButton.addEventListener("click", () => {
   window.RealWorld.submitAction("success");
 });
 closeButton.addEventListener("click", () => {
