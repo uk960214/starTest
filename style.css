@@ -70,7 +70,7 @@ header {
   border: 2px solid white;
 }
 
-.close-button {
+.controller {
   width: 100%;
   padding: 10px 0;
 
@@ -79,6 +79,17 @@ header {
   background-color: var(--primary);
 
   font-weight: 600;
+}
+
+.controller:disabled {
+  color: #000000;
+  background-color: #cccccc;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .puzzle-piece-container {

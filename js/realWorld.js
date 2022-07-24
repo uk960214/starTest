@@ -23,7 +23,12 @@ window.RealWorld = {
   },
 };
 
-const closeButton = document.querySelector(".close-button");
+const submitButton = document.querySelector("#submit-button");
+const closeButton = document.querySelector("#close-button");
+
+closeButton.addEventListener("click", () => {
+  window.RealWorld.submitAction("success");
+});
 closeButton.addEventListener("click", () => {
   window.RealWorld.closePage();
 });

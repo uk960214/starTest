@@ -7,6 +7,7 @@ import {
   placePuzzle,
   setShadowTouchPosition,
 } from "./helper.js";
+import { handleAnswer } from "./match.js";
 
 const main = document.querySelector("main");
 
@@ -51,6 +52,7 @@ const dropPiece = (e) => {
   }
 
   endPieceDrag(e, shadow);
+  handleAnswer(slotArray);
 };
 
 const handleDragStart = (e) => {
