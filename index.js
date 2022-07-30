@@ -1,2 +1,2 @@
-import "./js/touch.js";
+import "./js/webView.js";
 import "./js/realWorld.js";
