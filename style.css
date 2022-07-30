@@ -27,7 +27,7 @@ button {
   align-items: center;
   gap: 15px;
 
-  background-color: navy;
+  background-color: var(--main-bg-color);
 
   overflow: hidden;
 }
@@ -116,7 +116,14 @@ header {
   width: 90vw;
   min-height: 50vh;
 
-  background-color: #ffffff;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--main-bg-color);
 }
 
 .modal-close-button {
@@ -125,6 +132,20 @@ header {
   right: 20px;
   text-decoration: underline;
   font-size: 1rem;
+  color: #ffffff;
+}
+
+.star-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.star-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .puzzle-board {
@@ -218,4 +239,19 @@ footer {
 
 .dragged {
   opacity: 0.5;
+}
+
+.result-content,
+.hint-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-content p,
+.hint-content p {
+  font-size: 1.5rem;
+  text-align: center;
+  word-break: keep-all;
 }

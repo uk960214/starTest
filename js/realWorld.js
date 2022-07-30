@@ -16,19 +16,27 @@ window.RealWorld = {
     }
   },
   closePage() {
+    console.log("page-closed");
     window.RealWorld.invoke("closePage");
   },
   submitAction(input) {
+    console.log("submit", input);
     window.RealWorld.invoke("submitAction", input);
   },
 };
 
+const app = document.querySelector("#app");
+
 const submitButton = document.querySelector("#submit-button");
 const closeButton = document.querySelector("#close-button");
 
-submitButton.addEventListener("click", () => {
-  window.RealWorld.submitAction("success");
-});
-closeButton.addEventListener("click", () => {
-  window.RealWorld.closePage();
-});
+const handleRealWorldButtonClick = ({ target: { id: targetId } }) => {
+  if (targetId === "submit-button") {
+    window.RealWorld.submitAction("success");
+  }
+  if (targetId === "close-button") {
+    window.RealWorld.closePage();
+  }
+};
+
+app.addEventListener("click", handleRealWorldButtonClick);

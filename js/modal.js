@@ -1,3 +1,5 @@
+const modalPlaceholder = document.querySelector(".modal-placeholder");
+
 const ModalTemplate = (content) => `
   <div class="modal">
     <div class="modal-backdrop"></div>
@@ -14,11 +16,7 @@ const createModal = (content) => {
   return modal.content;
 };
 
-export const showModal = (container, content) => {
+export const showModal = (content) => {
   const modal = createModal(content);
-  container.append(modal);
-};
-
-export const attachModal = ({ button, container, content }) => {
-  button.addEventListener("click", () => showModal(container, content));
+  modalPlaceholder.append(modal);
 };
