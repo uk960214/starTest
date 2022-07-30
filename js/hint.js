@@ -27,7 +27,7 @@ const starMenu = `
           <p>사자자리</p>
         </div>
         <div class="star-desc">
-          <img src="./images/stars/scale.svg" alt="star1" />
+          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/jntSLX1b0o5giR86ir20Bg-scale.svg" alt="star1" />
           <p>천칭자리</p>
         </div>
         <div class="star-desc">

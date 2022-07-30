@@ -1,6 +1,6 @@
 import { showModal } from "./modal.js";
 
-const date = document.querySelector(".date");
+const description = document.querySelector(".description");
 
 const { stage } = document.querySelector(".title")?.dataset;
 
@@ -36,14 +36,10 @@ const checkAnswer = (slotArray) =>
 
 export const handleAnswer = (slotArray) => {
   if (checkAnswer(slotArray)) {
-    date.textContent = RESULT_DATE[stage];
-
-    const submitButton = document.querySelector("#submit-button");
-    submitButton.disabled = false;
-    submitButton.textContent = "날짜를 찾았다!";
+    description.textContent = RESULT_DATE[stage];
 
     showModal(resultContent(RESULT_DATE[stage]));
     return;
   }
-  date.textContent = "????년 ??월 ??일";
+  description.textContent = "별자리와 일치하는 날짜를 찾지 못했습니다";
 };

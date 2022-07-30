@@ -47,8 +47,8 @@ header {
   color: var(--primary);
 }
 
-.date {
-  font-size: 20px;
+.description {
+  font-size: 1rem;
 }
 
 .transparent-button {
