@@ -24,7 +24,7 @@ body {
   width: 100vw;
   max-width: 400px;
   margin: auto;
-  padding: 50px 10px;
+  padding: 30px 10px;
 
   position: relative;
 
@@ -106,7 +106,8 @@ header {
   align-items: center;
 }
 
-.modal-backdrop {
+.modal-backdrop,
+.modal-backdrop-style {
   position: absolute;
   top: 0;
   left: 0;
@@ -159,7 +160,7 @@ header {
 .puzzle-board {
   position: relative;
 
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
 
   display: grid;
@@ -168,6 +169,10 @@ header {
   border: 2px solid white;
 
   background-color: #ffffff33;
+}
+
+.hint-content .puzzle-board {
+  width: 100%;
 }
 
 .puzzle-slot {
@@ -206,8 +211,6 @@ footer {
 }
 
 .puzzle-piece-container {
-  height: 200px;
-  width: 70%;
   margin: 20px auto;
 
   display: flex;
@@ -216,7 +219,8 @@ footer {
 
 .puzzle-container-slot {
   position: relative;
-  width: 100px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto;
 
   border: none;
@@ -235,8 +239,8 @@ footer {
   z-index: 2;
 
   cursor: move;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .puzzle-piece-static {
