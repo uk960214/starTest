@@ -151,7 +151,7 @@ header {
 .puzzle-board {
   position: relative;
 
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 
   display: grid;
@@ -231,10 +231,13 @@ footer {
   height: 100px;
 }
 
+.puzzle-piece-static {
+  width: 80px;
+  height: 80px;
+}
+
 .puzzle-board .puzzle-piece {
   position: relative;
-  top: 0;
-  bottom: 0;
 }
 
 .dragged {
@@ -254,4 +257,9 @@ footer {
   font-size: 1.5rem;
   text-align: center;
   word-break: keep-all;
+}
+
+summary {
+  text-align: center;
+  margin-bottom: 10px;
 }

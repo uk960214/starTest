@@ -1,29 +1,10 @@
+import { PUZZLE_ANSWER, RESULT_DATE } from "./constants/quiz.js";
+import { resultContent } from "./constants/template.js";
 import { showModal } from "./modal.js";
 
 const description = document.querySelector(".description");
 
 const { stage } = document.querySelector(".title")?.dataset;
-
-const PUZZLE_ANSWER = ["130000024", "000214030", "432010000", "402000301"];
-const RESULT_DATE = [
-  "1294년 10월 1일",
-  "1866년 8월 14일",
-  "1919년 2월 20일",
-  "1866년 10월 1일",
-];
-const resultContent = (resultDate) => `
-  <div class="result-content">
-    <h1>계산 결과</h1>
-    <p>
-      별자리 계산 결과는
-      <br />
-      <strong>${resultDate}</strong>
-      <br />
-      입니다.
-    </p>
-    <button class="controller" id="submit-button">완료</button>
-  </div>
-`;
 
 const getCurrentBoardStatus = (slotArray) =>
   slotArray
