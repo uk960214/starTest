@@ -1,22 +1,21 @@
 const modalPlaceholder = document.querySelector(".modal-placeholder");
 
-const ModalTemplate = (content) => `
+const ModalTemplate = (content, noClose) => `
   <div class="modal">
-    <div class="modal-backdrop"></div>
+    <div class=${noClose ? "modal-backdrop-style" : "modal-backdrop"}></div>
     <div class="modal-content">
-      <button class="modal-close-button transparent-button">닫기</button>
       ${content}
     </div>
   </div>
 `;
 
-const createModal = (content) => {
+const createModal = (content, noClose) => {
   const modal = document.createElement("template");
-  modal.innerHTML = ModalTemplate(content);
+  modal.innerHTML = ModalTemplate(content, noClose);
   return modal.content;
 };
 
-export const showModal = (content) => {
-  const modal = createModal(content);
+export const showModal = (content, noClose) => {
+  const modal = createModal(content, noClose);
   modalPlaceholder.append(modal);
 };

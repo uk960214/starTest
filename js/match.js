@@ -19,7 +19,7 @@ export const handleAnswer = (slotArray) => {
   if (checkAnswer(slotArray)) {
     description.textContent = RESULT_DATE[stage];
 
-    showModal(resultTemplate(RESULT_DATE[stage]));
+    showModal(resultTemplate(RESULT_DATE[stage]), true);
     return;
   }
   description.textContent = "별자리와 일치하는 날짜를 찾지 못했습니다";
