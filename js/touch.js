@@ -91,3 +91,8 @@ const handleDragEnd = (e) => {
 main.addEventListener("touchstart", handleDragStart);
 main.addEventListener("touchmove", handleDragMove);
 main.addEventListener("touchend", handleDragEnd);
+
+// 긴 터치 시 메뉴 방지
+app.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
