@@ -1,4 +1,15 @@
 import { hintText } from "./quiz.js";
+import { STARS } from "./stars.js";
+
+export const pieceTemplate = ({ url, name, index }) => ` 
+<div class="puzzle-container-slot">
+  <img
+    src=${url}
+    alt=${name}
+    class="puzzle-piece"
+    data-index=${index + 1}
+  />
+</div>`;
 
 export const hintTemplate = (stage) => `
   <div class="hint-content">
@@ -11,7 +22,7 @@ export const hintTemplate = (stage) => `
   </div>
 `;
 
-export const resultContent = (resultDate) => `
+export const resultTemplate = (resultDate) => `
   <div class="result-content">
     <h1>계산 결과</h1>
     <p>
@@ -25,6 +36,15 @@ export const resultContent = (resultDate) => `
   </div>
 `;
 
+const starMenuPieces = Object.values(STARS).reduce(
+  (template, { url, name }) => `${template}
+    <div class="star-desc">
+      <img src=${url} alt=${name} />
+      <p>${name}</p>
+    </div>`,
+  ""
+);
+
 export const starMenu = `
   <div class="modal">
     <div class="modal-backdrop"></div>
@@ -32,38 +52,7 @@ export const starMenu = `
       <h1>별자리 도감</h1>
       <br />
       <div class="star-grid">
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/y1xXCnpC2ZeOdvhqHqELBw-crab.svg" alt="crab" />
-          <p>게자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/WXCL2ppJMzzrvkMEyHmUYQ-fish.svg" alt="fish" />
-          <p>물고기자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/YDhxWcf2y4Yes6Whb5AZyQ-goat.svg" alt="goat" />
-          <p>염소자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/UZe6IA6awmT1UIVi6mfK9g-lion.svg" alt="lion" />
-          <p>사자자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/jntSLX1b0o5giR86ir20Bg-scale.svg" alt="scale" />
-          <p>천칭자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/kDF4FxhYbsJcP6TaaY8eXw-scorpion.svg" alt="scorpion" />
-          <p>전갈자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/RNT7wysdK5sT2rCmLuOTXg-sheep.svg" alt="sheep" />
-          <p>양자리</p>
-        </div>
-        <div class="star-desc">
-          <img src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/sVnzyLl7DKf1kX_-KsopVQ-taurus.svg" alt="taurus" />
-          <p>황소자리</p>
-        </div>
+        ${starMenuPieces}
       </div>
       <button class="modal-close-button transparent-button">닫기</button>
     </div>

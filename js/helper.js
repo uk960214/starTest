@@ -1,5 +1,5 @@
 import { boardDimensions } from "./board.js";
-import { PIECE_WIDTH, SLOT_COUNT } from "./constants.js";
+import { PIECE_WIDTH, SLOT_COUNT } from "./constants/layout.js";
 
 const app = document.querySelector("#app");
 

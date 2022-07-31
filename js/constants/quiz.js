@@ -1,3 +1,10 @@
+export const STAGE_PIECES_TYPES = [
+  ["CRAB", "GOAT", "SCORPION", "SHEEP"],
+  ["FISH", "LION", "SCORPION", "TAURUS"],
+  ["SCALE", "SHEEP", "GOAT", "LION"],
+  ["SHEEP", "FISH", "TAURUS", "CRAB"],
+];
+
 export const hintText = [
   "게와 전갈, 염소와 양이 끼리끼리 나란히 어울리는 모습. 물에 사는 것들은 왼쪽 위 높이, 땅에 사는 것들은 오른쪽 아래 낮게 있다.",
   "하늘 한 가운데에 물고기가 있는데 왼쪽에서는 사자가 탐하고 오른쪽에서는 황소가 탐하며 아래에서는 전갈이 한마리 유유히 지나간다",

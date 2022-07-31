@@ -1,5 +1,5 @@
 import { slotArray } from "./board.js";
-import { PIECE_WIDTH } from "./constants.js";
+import { PIECE_WIDTH } from "./constants/layout.js";
 import {
   checkValidSlotArray,
   createTouchShadow,
@@ -9,22 +9,36 @@ import {
 } from "./helper.js";
 import { handleAnswer } from "./match.js";
 
+const body = document.querySelector("body");
+const app = document.querySelector("#app");
 const main = document.querySelector("main");
 
 let dragged = null;
 let shadow = null;
 
+const offsetX = app.offsetLeft;
+const getScrollOffsetY = () => app.scrollTop;
+
 const setUpPieceDrag = (e) => {
   dragged = e.target;
+  body.style.overflow = "hidden";
 
   const { pageX: xPosition, pageY: yPosition } = e.targetTouches[0];
 
-  shadow = createTouchShadow(dragged, { xPosition, yPosition });
+  shadow = createTouchShadow(dragged, {
+    xPosition: xPosition - offsetX,
+    yPosition: yPosition + getScrollOffsetY(),
+  });
 };
 
 const movePiece = (e) => {
   const { pageX: xPosition, pageY: yPosition } = e.targetTouches[0];
-  setShadowTouchPosition(shadow, xPosition, yPosition);
+
+  setShadowTouchPosition(
+    shadow,
+    xPosition - offsetX,
+    yPosition + getScrollOffsetY()
+  );
 };
 
 export const endPieceDrag = (e) => {
@@ -32,13 +46,14 @@ export const endPieceDrag = (e) => {
 
   dragged = null;
   e.target.classList.remove("dragged");
+  body.style.overflow = "scroll";
 
   shadow = null;
 };
 
 const dropPiece = (e) => {
   const currentTouchPosition = [
-    parseInt(shadow.style.left, 10) + PIECE_WIDTH / 2,
+    parseInt(shadow.style.left, 10) + PIECE_WIDTH / 2 + offsetX,
     parseInt(shadow.style.top, 10) + PIECE_WIDTH / 2,
   ];
 

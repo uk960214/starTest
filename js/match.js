@@ -1,5 +1,5 @@
 import { PUZZLE_ANSWER, RESULT_DATE } from "./constants/quiz.js";
-import { resultContent } from "./constants/template.js";
+import { resultTemplate } from "./constants/template.js";
 import { showModal } from "./modal.js";
 
 const description = document.querySelector(".description");
@@ -19,7 +19,7 @@ export const handleAnswer = (slotArray) => {
   if (checkAnswer(slotArray)) {
     description.textContent = RESULT_DATE[stage];
 
-    showModal(resultContent(RESULT_DATE[stage]));
+    showModal(resultTemplate(RESULT_DATE[stage]));
     return;
   }
   description.textContent = "별자리와 일치하는 날짜를 찾지 못했습니다";

@@ -1,4 +1,4 @@
-import { SLOT_COUNT } from "./constants.js";
+import { SLOT_COUNT } from "./constants/layout.js";
 
 const board = document.querySelector(".puzzle-board");
 
