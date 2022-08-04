@@ -1,6 +1,15 @@
+@font-face {
+  font-family: "BMEuljiro10yearslater";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/BMEuljiro10yearslater.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --main-bg-color: #23346f;
-  --primary: #ffcd1d;
+  --primary: #d5ba5e;
+  --letter-font-color: #322926;
 }
 
 * {
@@ -8,6 +17,10 @@
   padding: 0;
 
   box-sizing: border-box;
+
+  font-family: "MaruBuriSemiBold", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 button {
@@ -16,7 +29,9 @@ button {
 }
 
 body {
-  background-color: var(--main-bg-color);
+  background: url("https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/WBxxRVRJ30O5nmlshVjqkA-%EB%B3%84%EC%9E%90%EB%A6%AC%EA%B3%84%EC%82%B0%EA%B8%B0_%EB%B0%B0%EA%B2%BD.png")
+    no-repeat center/cover;
+  height: 100vh;
   overflow: scroll;
 }
 
@@ -47,6 +62,10 @@ header {
   gap: 10px;
 
   color: var(--primary);
+}
+
+.title {
+  font-family: "MaruBuriBold";
 }
 
 .description {
@@ -115,24 +134,19 @@ header {
   width: 100vw;
   height: 100vh;
 
-  background-color: #ffffff33;
+  background-color: #00000080;
 }
 
 .modal-content {
   position: relative;
 
   width: 90vw;
-  min-height: 50vh;
   max-width: 360px;
-
-  padding: 1.5rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-color: var(--main-bg-color);
 }
 
 .modal-close-button {
@@ -141,7 +155,7 @@ header {
   right: 20px;
   text-decoration: underline;
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--primary);
 }
 
 .star-grid {
@@ -173,6 +187,7 @@ header {
 
 .hint-content .puzzle-board {
   width: 100%;
+  background-color: #00000080;
 }
 
 .puzzle-slot {
@@ -262,6 +277,36 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.star-menu-content,
+.result-content {
+  background: url("https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/5R3DdhCO5AJ6Ukx09a_QJg-%EB%8F%84%EA%B0%90%EB%B0%B0%EA%B2%BD.png")
+    no-repeat center/cover;
+
+  width: 90vw;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.hint-content {
+  position: relative;
+  background: url("https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/HERiEMHy0f3juy37TUfnoQ-%ED%8E%B8%EC%A7%80%EC%A7%80.png")
+    no-repeat center;
+  font-family: "BMEuljiro10yearslater";
+  color: var(--letter-font-color);
+  padding: 1.5rem;
+}
+
+.hint-content .modal-close-button {
+  color: var(--letter-font-color);
+}
+
+.hint-content h1 {
+  font-weight: normal;
 }
 
 .result-content p,

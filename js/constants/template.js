@@ -12,8 +12,8 @@ export const pieceTemplate = ({ url, name, index }) => `
 </div>`;
 
 export const hintTemplate = (stage) => `
-  <button class="modal-close-button transparent-button">닫기</button>
-  <div class="hint-content">
+<div class="hint-content">
+<button class="modal-close-button transparent-button">닫기</button>
     <h1>편지의 내용</h1>
     <p>${hintText[stage]}</p>
     <details>
@@ -47,13 +47,14 @@ const starMenuPieces = Object.values(STARS).reduce(
 );
 
 export const starMenu = `
+<div class="star-menu-content">
     <h1>별자리 도감</h1>
     <br />
     <div class="star-grid">
       ${starMenuPieces}
     </div>
     <button class="modal-close-button transparent-button">닫기</button>
-
+</div>
 `;
 
 const answerBoard = [
