@@ -26,7 +26,7 @@ const countSlotNumber = (value) => {
 };
 
 export const getIntersectingSlotNumber = (xCurrent, yCurrent) => {
-  const { xStart, yStart, width, height } = boardDimensions;
+  const { xStart, yStart, width, height } = boardDimensions();
 
   const slotXNumber = countSlotNumber((xCurrent - xStart) / width);
   const slotYNumber = countSlotNumber((yCurrent - yStart) / height);

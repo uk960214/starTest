@@ -2,13 +2,12 @@ import { SLOT_COUNT } from "./constants/layout.js";
 
 const board = document.querySelector(".puzzle-board");
 
-const boardRect = board.getBoundingClientRect();
-export const boardDimensions = {
-  xStart: boardRect.left,
-  yStart: boardRect.top,
-  width: boardRect.width,
-  height: boardRect.height,
-};
+export const boardDimensions = () => ({
+  xStart: board.getBoundingClientRect().left,
+  yStart: board.getBoundingClientRect().top,
+  width: board.getBoundingClientRect().width,
+  height: board.getBoundingClientRect().height,
+});
 export const slotArray = [...board.children].reduce((array, slot, index) => {
   const newArray = [...array];
 

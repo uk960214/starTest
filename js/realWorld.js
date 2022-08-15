@@ -27,9 +27,6 @@ window.RealWorld = {
 
 const app = document.querySelector("#app");
 
-const submitButton = document.querySelector("#submit-button");
-const closeButton = document.querySelector("#close-button");
-
 const handleRealWorldButtonClick = ({ target: { id: targetId } }) => {
   if (targetId === "submit-button") {
     window.RealWorld.submitAction("success");
@@ -40,3 +37,8 @@ const handleRealWorldButtonClick = ({ target: { id: targetId } }) => {
 };
 
 app.addEventListener("click", handleRealWorldButtonClick);
+
+if (window.webkit) {
+  const closeButton = document.querySelector("#close-button");
+  closeButton.style.marginBottom = "6rem";
+}

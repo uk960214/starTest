@@ -16,7 +16,7 @@ const main = document.querySelector("main");
 let dragged = null;
 let shadow = null;
 
-const offsetX = app.offsetLeft;
+const getScrollOffsetX = () => app.offsetLeft;
 const getScrollOffsetY = () => app.scrollTop;
 
 const setUpPieceDrag = (e) => {
@@ -26,7 +26,7 @@ const setUpPieceDrag = (e) => {
   const { pageX: xPosition, pageY: yPosition } = e.targetTouches[0];
 
   shadow = createTouchShadow(dragged, {
-    xPosition: xPosition - offsetX,
+    xPosition: xPosition - getScrollOffsetX(),
     yPosition: yPosition + getScrollOffsetY(),
   });
 };
@@ -36,7 +36,7 @@ const movePiece = (e) => {
 
   setShadowTouchPosition(
     shadow,
-    xPosition - offsetX,
+    xPosition - getScrollOffsetX(),
     yPosition + getScrollOffsetY()
   );
 };
@@ -53,7 +53,7 @@ export const endPieceDrag = (e) => {
 
 const dropPiece = (e) => {
   const currentTouchPosition = [
-    parseInt(shadow.style.left, 10) + PIECE_WIDTH / 2 + offsetX,
+    parseInt(shadow.style.left, 10) + PIECE_WIDTH / 2 + getScrollOffsetX(),
     parseInt(shadow.style.top, 10) + PIECE_WIDTH / 2,
   ];
 
