@@ -39,6 +39,8 @@ const handleRealWorldButtonClick = ({ target: { id: targetId } }) => {
 app.addEventListener("click", handleRealWorldButtonClick);
 
 if (window.webkit) {
+  const nav = document.querySelector("nav");
   const closeButton = document.querySelector("#close-button");
   closeButton.style.marginBottom = "6rem";
+  nav.style.paddingTop = "2.5rem";
 }

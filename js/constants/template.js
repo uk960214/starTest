@@ -220,4 +220,45 @@ const answerBoard = [
       </div>
     </section>
   `,
+  `
+    <section class="puzzle-board">
+      <div class="puzzle-slot">
+        <img
+          src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/UZe6IA6awmT1UIVi6mfK9g-lion.svg"
+          alt="사자자리"
+          class="puzzle-piece"
+          data-index="1"
+        />
+      </div>
+      <div class="puzzle-slot">
+        <img
+          src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/sVnzyLl7DKf1kX_-KsopVQ-taurus.svg"
+          alt="황소자리"
+          class="puzzle-piece"
+          data-index="2"
+        />
+      </div>
+      <div class="puzzle-slot">
+        <img
+          src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/kDF4FxhYbsJcP6TaaY8eXw-scorpion.svg"
+          alt="전갈자리"
+          class="puzzle-piece"
+          data-index="3"
+        />
+      </div>
+      <div class="puzzle-slot"></div>
+      <div class="puzzle-slot">
+        <img
+          src="https://realworld.blob.core.windows.net/project-files/u4czzO3QWwtfaj06xZeGHw/WXCL2ppJMzzrvkMEyHmUYQ-fish.svg"
+          alt="물고기자리"
+          class="puzzle-piece"
+          data-index="4"
+        />
+      </div>
+      <div class="puzzle-slot"></div>
+      <div class="puzzle-slot"></div>
+      <div class="puzzle-slot"></div>
+      <div class="puzzle-slot"></div>
+    </section>
+  `,
 ];

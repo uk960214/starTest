@@ -319,6 +319,10 @@ footer {
   word-break: keep-all;
 }
 
+.hint-content p {
+  font-size: 1.2rem;
+}
+
 summary {
   text-align: center;
   margin-bottom: 10px;
